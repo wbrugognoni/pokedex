@@ -5,8 +5,10 @@ import "../styles/Home.css";
 export const Home = () => {
   return (
     <>
-      <FilterDropdown />
-      <PokemonList />
+      <div className="container">
+        <FilterDropdown />
+        <PokemonList />
+      </div>
     </>
   );
 };
