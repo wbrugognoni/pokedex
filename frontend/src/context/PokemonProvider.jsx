@@ -5,6 +5,7 @@ export const PokemonProvider = ({ children }) => {
   //El siguiente tramo de codigo corresponde a la conexion con la API para traer de a 20 pokemons
   const [pokemons, setPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
+
   const getPokemons = async (limit = 20) => {
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,

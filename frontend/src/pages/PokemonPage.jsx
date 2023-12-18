@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../styles/PokemonPage.css";
 import { BackButton } from "../components/BackButton";
 
 export const PokemonPage = () => {
-  const navigate = useNavigate();
   const { id } = useParams();
   const [pokemonById, setPokemonById] = useState({});
   const [loading, setLoading] = useState(true);
@@ -16,7 +15,6 @@ export const PokemonPage = () => {
     const data = await response.json();
 
     setPokemonById(data);
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -37,6 +35,7 @@ export const PokemonPage = () => {
       method: "GET",
     });
     const data1 = await response1.json();
+
     try {
       setEvolutionChain([
         data1.chain.species.name,
@@ -49,6 +48,7 @@ export const PokemonPage = () => {
         data1.chain.evolves_to[0].species.name,
       ]);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -58,14 +58,13 @@ export const PokemonPage = () => {
   return (
     <div className="container">
       <div className="container-pokemon-page">
-        
         {loading ? (
           "Loading"
         ) : (
           <>
             <div className="card">
               <div className="container-pokemon-page-btn">
-              <BackButton/>
+                <BackButton />
               </div>
               <div className="container-pokemon-page-img">
                 <img
@@ -131,24 +130,27 @@ export const PokemonPage = () => {
                 </div>
 
                 <h4>Evolutions</h4>
+                <br></br>
                 <div className="evolutions-container">
-                  <div className="card-pokemon-volution">
-                    <img src="" alt="" />
+                  <div className="card-pokemon-evolution">
                     {evolutionChain[0]}
                   </div>
-                  <div className="card-pokemon-volution">
-                    <img src="" alt="" />
+                  <div className="card-pokemon-evolution">
                     {evolutionChain[1]}
                   </div>
-                  <div className="card-pokemon-volution">
-                    <img src="" alt="" />
+                  <div className="card-pokemon-evolution">
                     {evolutionChain[2]}
                   </div>
                 </div>
 
+                <br></br>
+                <h5>This character is present in the following games:</h5>
                 <div className="game-indices-container">
-                  <h5>This character is present in the following games:</h5>
-                  {pokemonById.game_indices.map((game) => game.version.name)}
+                  {pokemonById.game_indices.map((game) => (
+                    <>
+                      <div className="game-container">{game.version.name}</div>
+                    </>
+                  ))}
                 </div>
               </div>
             </div>

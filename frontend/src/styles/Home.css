@@ -10,6 +10,6 @@ padding: 20px;
 .logo-container{
   display: flex;
   justify-content: center;
-  align-items: center; /* Centra verticalmente */
-  height: 15vh;
+  align-items: center; 
+  height:auto;
 }
