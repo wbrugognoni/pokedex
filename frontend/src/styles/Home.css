@@ -3,6 +3,10 @@
   background-color: #739072;
 }
 
+.container{
+padding: 20px;
+}
+
 .logo-container{
   display: flex;
   justify-content: center;

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/PokemonPage.css";
+import { BackButton } from "../components/BackButton";
 
 export const PokemonPage = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [pokemonById, setPokemonById] = useState({});
   const [loading, setLoading] = useState(true);
@@ -56,89 +58,103 @@ export const PokemonPage = () => {
   return (
     <div className="container">
       <div className="container-pokemon-page">
-      {loading ? (
-        "Loading"
-      ) : (
-        <>
-
-          <div className="card">
-            <div className="container-pokemon-page-img">
-            <img
-              src={pokemonById.sprites.other.dream_world.front_default}
-              className="img-pokemon-page"
-              alt="..."
-            />
-            </div>
-
-            <div className="card-body-pokemon-page">
-              
-              <h2 className="pokemon-page-title">{pokemonById.name}</h2>
-
-              <h4>Statistics</h4>
-              <div className="stats-container">
-                <div className="stats-container-one">
-                <h5 className="stat-container">
-                  {pokemonById.stats[0].stat.name}:   {pokemonById.stats[0].base_stat}
-                </h5>
-                <h5 className="stat-container">
-                  {pokemonById.stats[1].stat.name}:  {pokemonById.stats[1].base_stat}
-                </h5>
-                <h5 className="stat-container">
-                  {pokemonById.stats[2].stat.name}:  {pokemonById.stats[2].base_stat}
-                </h5>
-                </div>
-                <div className="stats-container-two">
-                <h5 className="stat-container">
-                  {pokemonById.stats[3].stat.name}:  {pokemonById.stats[3].base_stat}
-                </h5>
-                <h5 className="stat-container">
-                  {pokemonById.stats[4].stat.name}:  {pokemonById.stats[4].base_stat}
-                </h5>
-                <h5 className="stat-container">
-                  {pokemonById.stats[5].stat.name}:  {pokemonById.stats[5].base_stat}
-                </h5>
-                </div>
+        
+        {loading ? (
+          "Loading"
+        ) : (
+          <>
+            <div className="card">
+              <div className="container-pokemon-page-btn">
+              <BackButton/>
+              </div>
+              <div className="container-pokemon-page-img">
+                <img
+                  src={pokemonById.sprites.other.dream_world.front_default}
+                  className="img-pokemon-page"
+                  alt="..."
+                />
               </div>
 
+              <div className="card-body-pokemon-page">
+                <h2 className="pokemon-page-title">{pokemonById.name}</h2>
 
-              <h4>Type</h4>
-              <div className="types-container">
-                {pokemonById.types.map((type) => <><div className="type-container">{type.type.name}  </div></>)}
-              </div>
-
-
-              <h4>Abilities</h4>
-              <div className="abilities-container">
-                {pokemonById.abilities.map((ability) => ability.ability.name)}
-              </div>
-
-              <h4>Evolutions</h4>
-              <div className="evolutions-container">
-                <div className="card">
-                  <img src="" className="card-img-top" alt="" />
-                  <div className="card-body">
-                    <div className="card-pokemon-volution">
-                      {evolutionChain[0]}
-                    </div>
-                    <div className="card-pokemon-volution">
-                      {evolutionChain[1]}
-                    </div>
-                    <div className="card-pokemon-volution">
-                      {evolutionChain[2]}
-                    </div>
+                <h4>Statistics</h4>
+                <div className="stats-container">
+                  <div className="stats-container-one">
+                    <h5 className="stat-container">
+                      {pokemonById.stats[0].stat.name}:{" "}
+                      {pokemonById.stats[0].base_stat}
+                    </h5>
+                    <h5 className="stat-container">
+                      {pokemonById.stats[1].stat.name}:{" "}
+                      {pokemonById.stats[1].base_stat}
+                    </h5>
+                    <h5 className="stat-container">
+                      {pokemonById.stats[2].stat.name}:{" "}
+                      {pokemonById.stats[2].base_stat}
+                    </h5>
+                  </div>
+                  <div className="stats-container-two">
+                    <h5 className="stat-container">
+                      {pokemonById.stats[3].stat.name}:{" "}
+                      {pokemonById.stats[3].base_stat}
+                    </h5>
+                    <h5 className="stat-container">
+                      {pokemonById.stats[4].stat.name}:{" "}
+                      {pokemonById.stats[4].base_stat}
+                    </h5>
+                    <h5 className="stat-container">
+                      {pokemonById.stats[5].stat.name}:{" "}
+                      {pokemonById.stats[5].base_stat}
+                    </h5>
                   </div>
                 </div>
-              </div>
 
-              <h5>This character is present in the following games:</h5>
-              <div className="game-indices-container">
-                {pokemonById.game_indices.map((game) => game.version.name)}
+                <h4>Type</h4>
+                <div className="types-container">
+                  {pokemonById.types.map((type) => (
+                    <>
+                      <div className="type-container">{type.type.name} </div>
+                    </>
+                  ))}
+                </div>
+
+                <h4>Abilities</h4>
+                <div className="abilities-container">
+                  {pokemonById.abilities.map((ability) => (
+                    <>
+                      <div className="ability-container">
+                        {ability.ability.name}
+                      </div>
+                    </>
+                  ))}
+                </div>
+
+                <h4>Evolutions</h4>
+                <div className="evolutions-container">
+                  <div className="card-pokemon-volution">
+                    <img src="" alt="" />
+                    {evolutionChain[0]}
+                  </div>
+                  <div className="card-pokemon-volution">
+                    <img src="" alt="" />
+                    {evolutionChain[1]}
+                  </div>
+                  <div className="card-pokemon-volution">
+                    <img src="" alt="" />
+                    {evolutionChain[2]}
+                  </div>
+                </div>
+
+                <div className="game-indices-container">
+                  <h5>This character is present in the following games:</h5>
+                  {pokemonById.game_indices.map((game) => game.version.name)}
+                </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };
