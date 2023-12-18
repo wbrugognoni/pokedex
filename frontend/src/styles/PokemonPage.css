@@ -1,0 +1,71 @@
+.container-pokemon-page{
+    padding: 20px;
+
+}
+
+.card{
+    max-width: 900px;
+}
+
+.container-pokemon-page-img{
+    background-color: #ECE3CE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+img{
+    max-width: 100%;
+}
+
+.img-pokemon-page{
+    background-color: #ECE3CE;
+    
+}
+
+.card-body-pokemon-page{
+    background-color: #ECE3CE;
+    padding: 40px;
+}
+
+.pokemon-page-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #ECE3CE;
+}
+
+h4{
+    background-color: #ECE3CE;
+}
+.stats-container{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ECE3CE;
+}
+
+.stat-container{
+    background-color: #ECE3CE;
+    margin: 0%;
+}
+
+.types-container{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ECE3CE;
+}
+
+.type-container{
+    background-color: #ECE3CE;
+    margin: 0%;
+}

@@ -2,3 +2,10 @@
   font-family: "Playfair Display", serif;
   background-color: #739072;
 }
+
+.logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente */
+  height: 15vh;
+}

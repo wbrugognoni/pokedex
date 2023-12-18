@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
+import '../styles/FilterDropdown.css'
 
 export const FilterDropdown = () => {
   const { handleCheckbox } = useContext(PokemonContext);
@@ -13,10 +14,10 @@ export const FilterDropdown = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Types:
+            Filter by type:  
         </button>
         <ul className="dropdown-menu">
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="normal">
               <input
                 className="form-check-input me-1"
@@ -29,7 +30,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="fighting">
               <input
                 className="form-check-input me-1"
@@ -42,7 +43,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="flying">
               <input
                 className="form-check-input me-1"
@@ -55,7 +56,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="poison">
               <input
                 className="form-check-input me-1"
@@ -68,7 +69,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="ground">
               <input
                 className="form-check-input me-1"
@@ -81,7 +82,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="rock">
               <input
                 className="form-check-input me-1"
@@ -94,7 +95,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="bug">
               <input
                 className="form-check-input me-1"
@@ -107,7 +108,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="ghost">
               <input
                 className="form-check-input me-1"
@@ -120,7 +121,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="steel">
               <input
                 className="form-check-input me-1"
@@ -133,7 +134,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="fire">
               <input
                 className="form-check-input me-1"
@@ -146,7 +147,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="water">
               <input
                 className="form-check-input me-1"
@@ -159,7 +160,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="grass">
               <input
                 className="form-check-input me-1"
@@ -172,7 +173,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="electric">
               <input
                 className="form-check-input me-1"
@@ -185,7 +186,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="psychic">
               <input
                 className="form-check-input me-1"
@@ -198,7 +199,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="ice">
               <input
                 className="form-check-input me-1"
@@ -211,7 +212,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="dragon">
               <input
                 className="form-check-input me-1"
@@ -224,7 +225,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="dark">
               <input
                 className="form-check-input me-1"
@@ -237,7 +238,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="fairy">
               <input
                 className="form-check-input me-1"
@@ -250,7 +251,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="unknown">
               <input
                 className="form-check-input me-1"
@@ -263,7 +264,7 @@ export const FilterDropdown = () => {
             </label>
           </li>
 
-          <li className="list-group-item">
+          <li className="pokemon-list-group-item">
             <label className="form-check-label" htmlFor="shadow">
               <input
                 className="form-check-input me-1"
