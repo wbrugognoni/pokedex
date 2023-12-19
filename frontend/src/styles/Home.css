@@ -5,6 +5,8 @@
 
 .container{
 padding: 20px;
+align-items: center;
+justify-content: center;
 }
 
 .logo-container{

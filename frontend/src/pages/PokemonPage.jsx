@@ -43,10 +43,14 @@ export const PokemonPage = () => {
         data1.chain.evolves_to[0].evolves_to[0].species.name,
       ]);
     } catch (error) {
-      setEvolutionChain([
-        data1.chain.species.name,
-        data1.chain.evolves_to[0].species.name,
-      ]);
+      try {
+        setEvolutionChain([
+          data1.chain.species.name,
+          data1.chain.evolves_to[0].species.name,
+        ]);
+      } catch (error) {
+        setEvolutionChain([data1.chain.species.name]);
+      }
     }
     setLoading(false);
   };
